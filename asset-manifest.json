@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/WilmerBuestan/tiempo-disponible/static/css/main.d44e2e91.css",
+    "main.js": "/WilmerBuestan/tiempo-disponible/static/js/main.cf12b09c.js",
+    "static/js/977.56d53088.chunk.js": "/WilmerBuestan/tiempo-disponible/static/js/977.56d53088.chunk.js",
+    "static/js/732.fde4fd7e.chunk.js": "/WilmerBuestan/tiempo-disponible/static/js/732.fde4fd7e.chunk.js",
+    "static/js/453.6c64bad2.chunk.js": "/WilmerBuestan/tiempo-disponible/static/js/453.6c64bad2.chunk.js",
+    "index.html": "/WilmerBuestan/tiempo-disponible/index.html",
+    "main.d44e2e91.css.map": "/WilmerBuestan/tiempo-disponible/static/css/main.d44e2e91.css.map",
+    "main.cf12b09c.js.map": "/WilmerBuestan/tiempo-disponible/static/js/main.cf12b09c.js.map",
+    "977.56d53088.chunk.js.map": "/WilmerBuestan/tiempo-disponible/static/js/977.56d53088.chunk.js.map",
+    "732.fde4fd7e.chunk.js.map": "/WilmerBuestan/tiempo-disponible/static/js/732.fde4fd7e.chunk.js.map",
+    "453.6c64bad2.chunk.js.map": "/WilmerBuestan/tiempo-disponible/static/js/453.6c64bad2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d44e2e91.css",
+    "static/js/main.cf12b09c.js"
+  ]
+}
