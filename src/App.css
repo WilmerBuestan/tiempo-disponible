@@ -1,38 +1,84 @@
 .App {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #2c3e50;
+}
+
+.header {
+  background-color: #1a2a40;
+  color: white;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+label {
+  display: inline-block;
+  width: 240px;
+  font-weight: bold;
+  margin-top: 0.6rem;
+  color: #2c3e50;
+}
+
+input {
+  padding: 6px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #204080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #162e5c;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table th {
+  background-color: #dde6f1;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bloque {
+  border: 2px solid #2c3e50;
+  background-color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 3rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
 }
