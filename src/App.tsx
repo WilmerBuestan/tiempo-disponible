@@ -7,6 +7,29 @@ import html2canvas from "html2canvas";
 function App() {
 
 
+  const calcularHitosPlanificacion = (horasTotales: number, fechaInicio: string, ajusteHoras: number = 1) => {
+    const puntos = [0.2, 0.6, 0.8, 1.0];
+    const fechaBase = new Date(fechaInicio);
+  
+    const hitos = puntos.map(p => {
+      const horas = p * horasTotales;
+      const ms = horas * 60 * 60 * 1000;
+      const fechaHito = new Date(fechaBase.getTime() + ms);
+      const fechaAjustada = new Date(fechaHito.getTime() - ajusteHoras * 60 * 60 * 1000);
+  
+      return {
+        porcentaje: `${(p * 100).toFixed(0)}%`,
+        horas: horas.toFixed(2),
+        horaCalculada: formatearMilitar(fechaHito.toISOString()),
+        horaAjustada: formatearMilitar(fechaAjustada.toISOString())
+      };
+    });
+  
+    return hitos;
+  };
+  
+
+
   const generarPDF = () => {
     const input = document.querySelector(".App");
     if (!input) return;
@@ -205,6 +228,42 @@ function App() {
   <p><strong>Total hrs oscuridad:</strong> {decimalAHorasMinutos(resultados.reduce((sum, r) => sum + r.oscuridad, 0))}</p>
 <p><strong>1/3 Planificación Cía:</strong> {decimalAHorasMinutos(Math.floor(totalHoras / 3))}</p>
 <p><strong>2/3 Actividades de preparación con las unidades subordinadas:</strong> {decimalAHorasMinutos(totalHoras - Math.floor(totalHoras / 3))}</p>
+
+{(() => {
+  const horasPlanificacion = Math.floor(totalHoras / 3); // 1/3 como base
+  const hitos = calcularHitosPlanificacion(horasPlanificacion, seVive, 1); // ajuste de 1 hora
+
+  return (
+    <div className="bloque">
+      <h3>Hitos de Planificación (basado en {horasPlanificacion} h = 1/3)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>%</th>
+            <th>Horas</th>
+            <th>Hora calculada</th>
+            <th>Hora ajustada (-1h)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {hitos.map((h, idx) => (
+            <tr key={idx}>
+              <td>{h.porcentaje}</td>
+              <td>{h.horas}</td>
+              <td>{h.horaCalculada}</td>
+              <td>{h.horaAjustada}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+})()}
+
+
+
+
+
 </div>
 
 <div className="bloque">
